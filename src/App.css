@@ -1,38 +1,90 @@
+body {
+  background-color: rgba(0, 4, 24, 0.884);
+  color:white;
+}
+
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
+  height: 100%;
+}
+
+.Header {
+  padding: 2em;
+}
+
+.Header > h1 {
+  font-size: 72px;
+  margin: 0;
+}
+
+.Header > h2 {
+  text-align: center;
+}
+
+.Cube {
+  background-color: rgba(0,0,0,0.7);
+  width: 500px;
+  height: 500px;
+  border: 4px solid rgb(51, 51, 80);
+  color: wheat;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 96px;
 }
 
-.App-link {
-  color: #61dafb;
+.floatingAnimation {
+  animation: floating 2s infinite;
+  transition: all;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes floating {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(3px);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.Form, .Preview {
+  background-color:rgb(28, 49, 42);
+  padding:2em;
+  width:400px;
+  position: absolute;
+  top:1em;
+  right:1em;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Form > input {
+  padding:1em;
+  width: 90%;
+  margin:2em;
+}
+
+.require {
+  border: 4px solid rgb(255, 55, 55);
+}
+
+.btn-shuffle, .btn-clear {
+  padding:1em;
+  text-transform: uppercase;
+  font-weight:bold;
+  font-size:24px;
 }
