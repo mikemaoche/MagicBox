@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgba(0, 4, 24, 0.884);
   color:white;
@@ -27,17 +33,6 @@ body {
   text-align: center;
 }
 
-.Cube {
-  background-color: rgba(0,0,0,0.7);
-  width: 500px;
-  height: 500px;
-  border: 4px solid rgb(51, 51, 80);
-  color: wheat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 96px;
-}
 
 .floatingAnimation {
   animation: floating 2s infinite;
@@ -49,7 +44,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(3px);
+    transform: translateY(10px);
   }
   100% {
     transform: translateY(0);
@@ -58,12 +53,17 @@ body {
 
 
 .Form, .Preview {
-  background-color:rgb(28, 49, 42);
+  background-color:rgb(57, 57, 58);
   padding:2em;
-  width:400px;
+  width:25%;
   position: absolute;
-  top:1em;
-  right:1em;
+  top:25%;
+  right:2%;
+}
+
+
+.Preview > p {
+  font-size: 48px;
 }
 
 .Form {
@@ -72,19 +72,93 @@ body {
   align-items: center;
 }
 
-.Form > input {
-  padding:1em;
-  width: 90%;
-  margin:2em;
+.Form > h1 {
+  margin: 1em;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field > label > * {
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.field > label > .checkbox {
+  width: 20px;
+  height: 20px;
 }
 
 .require {
-  border: 4px solid rgb(255, 55, 55);
+  border: 2px solid rgb(255, 55, 55);
 }
 
+
 .btn-shuffle, .btn-clear {
+  margin-top: 1em;
+  width: 100%;
   padding:1em;
   text-transform: uppercase;
   font-weight:bold;
   font-size:24px;
+}
+
+.lock {
+  color: gray;
+  background-color: lightgray;
+}
+
+/* start */
+.arrows-animation{
+  text-transform: uppercase;
+  animation: flash 3s ease-in-out infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.Cube {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 500px;
+  height: 500px;
+  border: 4px solid rgb(51, 51, 80);
+  color: wheat;
+  font-size: 96px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.first-spin {
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.first-spin span {
+  --ch:-4;
+  animation: spinning 1s 1s linear infinite;
+}
+
+@keyframes spinning {
+  to {
+    transform:translateY(calc(var(--ch)*100%));
+  } 
 }
