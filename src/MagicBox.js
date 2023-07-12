@@ -80,6 +80,7 @@ function MagicBox({ canPlayBox, setcanPlayBox, results, setresults, show, setsho
     setstart(false)
     setplay(false)
     setshowLabel(false)
+    setcanPlayBox(false)
     setdata([])
     setresults([])
     

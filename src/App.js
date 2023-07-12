@@ -68,7 +68,7 @@ function App() {
       {
         !show && (
           <div id='form' className='Form'>
-            <h1>Write Five Activities</h1>
+            <h1>Write Five Things</h1>
             {
               Array.from({length: 5}).map((_,index) => {
                 const uniqueKey = `activity${index}`;
